@@ -2,7 +2,7 @@ from pathlib import Path
 
 import toml
 
-from {{ cookiecutter.project_slug.replace(" ", "_").replace("-", "_") }} import __version__
+from {{ cookiecutter.module_name }} import __version__
 
 project_dir = Path(__file__).parent.parent
 

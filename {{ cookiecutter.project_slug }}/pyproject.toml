@@ -1,6 +1,5 @@
-{% set good_slug = cookiecutter.project_slug.replace(" ", "_").replace("-", "_") %}
 [tool.poetry]
-name = "{{ good_slug }}"
+name = "{{ cookiecutter.module_name }}"
 description = "{{ cookiecutter.project_description }}"
 authors = ["{{ cookiecutter.author }} <{{ cookiecutter.email }}>"]
 version = "0.1.0"
@@ -15,7 +14,7 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Natural Language :: English",
 ]
-{% if cookiecutter.add_docs == "yes" %}documentation = "https://{{ good_slug }}.readthedocs.io/en/latest/index.html"
+{% if cookiecutter.add_docs == "yes" %}documentation = "https://{{ cookiecutter.module_name }}.readthedocs.io/en/latest/index.html"
 {% endif %}homepage = "https://github.com/{{ cookiecutter.username }}/{{ cookiecutter.project_slug }}"
 # keywords = ["awesome", "project"]  # Maximum of 5 keywords
 [tool.poetry.dependencies]
@@ -23,7 +22,7 @@ python = "^3.7"
 {% if cookiecutter.is_app == "yes" %}
 
 [tool.poetry.scripts]
-{{ good_slug }} = "{{ good_slug }}.__main__:main"
+{{ cookiecutter.module_name }} = "{{ cookiecutter.module_name }}.__main__:main"
 
 {% endif %}
 [tool.poetry.dev-dependencies]
@@ -42,18 +41,18 @@ docs = {cmd = "sphinx-build docs build", help = "Build documentation"}
 format = ["black", "isort"]
 black = {cmd = "black .", help = "Run black on codebase"}
 isort = {cmd = "isort . --profile=black", help = "Run isort on codebase"}
-mypy = {cmd = "mypy {{ good_slug }} --strict", help = "Run MyPy on codebase"}
-pylint = {cmd = "pylint {{ good_slug }} --fail-under=8", help = "Run Pylint on codebase"}
+mypy = {cmd = "mypy {{ cookiecutter.module_name }} --strict", help = "Run MyPy on codebase"}
+pylint = {cmd = "pylint {{ cookiecutter.module_name }} --fail-under=8", help = "Run Pylint on codebase"}
 
-_black = {"cmd" = "black {{ good_slug }} --check"}
-_isort = {"cmd" = "isort {{ good_slug }} --check --profile=black"}
+_black = {"cmd" = "black {{ cookiecutter.module_name }} --check"}
+_isort = {"cmd" = "isort {{ cookiecutter.module_name }} --check --profile=black"}
 style = ["_isort", "_black"]
 codebase = ["pylint","mypy"]
 lint = ["style", "codebase"]
 
 test = {cmd = "pytest -vvv", help = "Run test suite"}
-cov = {cmd = "pytest -vvv --cov={{ good_slug }} --cov-report=html", help = "Run test suite with codecoverage (HTML format)"}
-fcov = {cmd = "pytest -vvv --cov={{ good_slug }} --cov-report=html -n auto", help = "Run test suite with codecoverage in parallel. May decrease execution time"}
+cov = {cmd = "pytest -vvv --cov={{ cookiecutter.module_name }} --cov-report=html", help = "Run test suite with codecoverage (HTML format)"}
+fcov = {cmd = "pytest -vvv --cov={{ cookiecutter.module_name }} --cov-report=html -n auto", help = "Run test suite with codecoverage in parallel. May decrease execution time"}
 ftest = {cmd = "pytest -vvv -n auto", help = "Run test suite in parallel. May decrease execution time"}
 
 [build-system]
