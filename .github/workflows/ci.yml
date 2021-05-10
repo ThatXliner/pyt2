@@ -22,4 +22,5 @@ jobs:
           poetry install
           poetry build
           poe format
+          poetry run pip install sphinx
           poe docs
