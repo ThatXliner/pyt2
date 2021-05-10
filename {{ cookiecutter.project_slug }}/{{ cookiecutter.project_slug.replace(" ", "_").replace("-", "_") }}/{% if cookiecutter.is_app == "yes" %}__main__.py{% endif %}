@@ -1,0 +1,10 @@
+"""The main CLI entry point"""
+
+
+def main() -> None:
+    """The main CLI entry point"""
+    ...
+
+
+if __name__ == "__main__":
+    main()

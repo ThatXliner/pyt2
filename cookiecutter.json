@@ -1,0 +1,10 @@
+{
+	"project_name": "Cool Example",
+	"project_slug": "cool-example",
+	"project_description": "An awesome project",
+	"add_docs": ["yes", "no"],
+	"author": "Bryan Hu",
+	"username": "ThatXliner",
+	"email": "bryan.hu.2020@gmail.com",
+	"is_app": ["yes", "no"]
+}
