@@ -19,5 +19,6 @@ jobs:
       - name: Build example
         run: |
           cd cool-example
+          poetry install
           poetry build
           poe format
