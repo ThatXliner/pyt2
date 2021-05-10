@@ -1,0 +1,2 @@
+Sphinx
+{{ cookiecutter.pypi_name }}
