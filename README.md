@@ -15,3 +15,10 @@ I've seen [many other projects like this](https://github.com/search?q=python+coo
  - A pre-computed lock-file (`poetry.lock`) for the dependencies described above
  - Uses Poetry to manage the project
  - Optional `__main__.py` and `[tool.poetry.scripts]` entry point generation (for applications)
+
+# Usage
+
+```bash
+cookiecutter gh:ThatXliner/pyt2
+```
+✨ Magic
