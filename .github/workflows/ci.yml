@@ -16,10 +16,9 @@ jobs:
         run: python3 -m pip install --upgrade pip cookiecutter poetry poethepoet
       - name: Build example
         run: cookiecutter . --no-input
-      - name: Cd to example
-        run: cd cool-example
       - name: Make sure the lockfile, etc are fully up-to-date
         run: |
+            cd cool-example
             poetry update
             diff pyproject.toml '../{{ cookiecutter.pypi_name }}/{% if cookiecutter.add_docs == "yes" %}poetry.lock{% endif %}'
       - name: Install and build wheel for example
