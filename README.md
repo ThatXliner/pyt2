@@ -6,12 +6,28 @@ My [second attempt](https://github.com/ThatXliner/Pytemplate) at making a Python
 
 I've seen [many other projects like this](https://github.com/search?q=python+cookiecutter) but I've never seen any of them follow the pattern I want.
 
-# Features
+# :sparkles: Features
 
- - Uses the linters Black, Isort, MyPy, and Pylint
- - Uses Hypothesis for testing
- - Has a `test_version.py` which will test if the `__version__` metadata variable present in the package's name is equal to the one in the `pyproject.toml`
- - Documentation via Sphinx (Optional)
- - A pre-computed lock-file (`poetry.lock`) for the dependencies described above
- - Uses Poetry to manage the project
- - Optional `__main__.py` and `[tool.poetry.scripts]` entry point generation (for applications)
+ - :open_file_folder: Structure and project style
+     - :art: Uses the linters
+       - :black_circle: Black
+       - :pencil2: Isort
+       - :snake: MyPy
+       - :memo: Pylint
+     - &#x1F9EA; Hypothesis for testing
+     - :musical_note: Uses Poetry to manage the project
+     - (Optional) :smile_cat: Documentation via Sphinx
+ - :printer: Generation features
+     - :lock: Pre-computed lockfile (`poetry.lock`)
+     - :bookmark: Has a `test_version.py` which will test if the `__version__` metadata variable present in the package's name is equal to the one in the `pyproject.toml`
+     - (Optional) :clapper: `__main__.py` and `[tool.poetry.scripts]` entry point generation (for applications)
+
+
+
+
+# FAQ
+
+## About the name...
+
+Pronunciation: *pit-too*
+Why this is the name: **Py**thon **T**emplate **2**
