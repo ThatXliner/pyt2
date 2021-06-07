@@ -22,8 +22,12 @@ I've seen [many other projects like this](https://github.com/search?q=python+coo
      - :bookmark: Has a `test_version.py` which will test if the `__version__` metadata variable present in the package's name is equal to the one in the `pyproject.toml`
      - (Optional) :clapper: `__main__.py` and `[tool.poetry.scripts]` entry point generation (for applications)
 
+# Usage
 
-
+```bash
+cookiecutter gh:ThatXliner/pyt2
+```
+:sparkles: Magic
 
 # FAQ
 
