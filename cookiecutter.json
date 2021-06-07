@@ -9,5 +9,5 @@
 	"username": "ThatXliner",
 	"email": "bryan.hu.2020@gmail.com",
 	"(post-generation hook) install venv?": ["yes", "no"],
-	"(post-generation hook) run git init?": ["yes", "no"],
+	"(post-generation hook) run git init?": ["yes", "no"]
 }
