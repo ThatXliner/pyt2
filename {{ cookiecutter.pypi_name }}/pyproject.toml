@@ -52,6 +52,7 @@ lint = ["style", "codebase"]
 
 test = {cmd = "pytest -vvv", help = "Run test suite"}
 cov = {cmd = "pytest -vvv --cov={{ cookiecutter.module_name }} --cov-report=html", help = "Run test suite with codecoverage (HTML format)"}
+codecov = {cmd = "pytest -vvv --cov={{ cookiecutter.module_name }} --cov-report=xml", help = "Run test suite with codecoverage (XML format)"}
 fcov = {cmd = "pytest -vvv --cov={{ cookiecutter.module_name }} --cov-report=html -n auto", help = "Run test suite with codecoverage in parallel. May decrease execution time"}
 ftest = {cmd = "pytest -vvv -n auto", help = "Run test suite in parallel. May decrease execution time"}
 
