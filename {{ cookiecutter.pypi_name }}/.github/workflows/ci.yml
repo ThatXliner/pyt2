@@ -24,17 +24,7 @@ jobs:
       - name: Run test suite
         run: poe codecov
       - name: Upload to CodeCov
-        run: |
-          curl -fLso codecov https://codecov.io/bash;
-          VERSION=$(grep -o 'VERSION=\"[0-9\.]*\"' codecov | cut -d'"' -f2);
-          for i in 1 256 512
-          do
-            shasum -a $i -c --ignore-missing <(curl -s "https://raw.githubusercontent.com/codecov/codecov-bash/${VERSION}/SHA${i}SUM")
-          done
-          ./codecov
-        # curl -s https://codecov.io/bash > codecov.bash
-        # echo "d6aa3207c4908d123bd8af62ec0538e3f2b9f257c3de62fad4e29cd3b59b41d9  codecov.bash" | shasum -a 256 -c - --status
-        # bash codecov.bash
+        uses: codecov/codecov-action@v1
   docs:
     runs-on: ubuntu-latest
     steps:
