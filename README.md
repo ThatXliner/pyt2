@@ -16,6 +16,8 @@ I've seen [many other projects like this](https://github.com/search?q=python+coo
        - :memo: Pylint
      - &#x1F9EA; Hypothesis for testing
      - :musical_note: Uses Poetry to manage the project
+     - :notes: Has Poe tasks
+     - :octocat: Uses GitHub Actions for CI
      - (Optional) :smile_cat: Documentation via Sphinx
  - :printer: Generation features
      - :lock: Pre-computed lockfile (`poetry.lock`)
