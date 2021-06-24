@@ -10,12 +10,12 @@ if "yes" in {
 }:
     print("Running post project hooks:")
 {% if cookiecutter["(post-generation hook) run git init?"] == "yes" %}
-    print(" - Running `git init`...", end=" ")
+    print(" - Running `git init`...", end=" ", flush=True)
     subprocess.run([shutil.which("git") or "git", "init"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     print("done")
 {% endif %}
 {% if cookiecutter["(post-generation hook) install venv?"] == "yes" %}
-    print(" - Running `poetry install`...", end=" ")
+    print(" - Running `poetry install`...", end=" ", flush=True)
     subprocess.run([shutil.which("poetry") or "poetry", "install"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     print("done")
 {% endif %}
