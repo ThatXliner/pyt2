@@ -4,8 +4,10 @@
 	"module_name": "{{ cookiecutter.pypi_name|replace(\"-\", \"_\") }}",
 	"project_description": "An awesome project",
 	"add_docs": ["yes", "no"],
+	"is_app": ["yes", "no"],
 	"author": "Bryan Hu",
 	"username": "ThatXliner",
 	"email": "bryan.hu.2020@gmail.com",
-	"is_app": ["yes", "no"]
+	"(post-generation hook) install venv?": ["yes", "no"],
+	"(post-generation hook) run git init?": ["yes", "no"]
 }
