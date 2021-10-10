@@ -1,0 +1,65 @@
+name: Autoupdate
+on:
+  schedule:
+    - cron: "0 0 * * *"  # Run every single day
+jobs:
+  with_docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: python3 -m pip install --upgrade pip cookiecutter poetry poethepoet
+      - name: Build example template
+        run: cookiecutter . --no-input
+             cd cool-example
+      - name: Update example template
+        run: poetry update
+      # If the lockfile and the updated one is the same, dont change
+      - name: Check for differences
+        uses: andymckay/cancel-action@0.2
+        if: |
+          ! diff \
+            '../{{ cookiecutter.pypi_name }}/{% if cookiecutter.add_docs == "yes" %}poetry.lock{% endif %}' \
+            poetry.lock
+      - name: Commit updated
+        run: cp poetry.lock '../{{ cookiecutter.pypi_name }}/{% if cookiecutter.add_docs == "yes" %}poetry.lock{% endif %}'
+      - uses: EndBug/add-and-commit@v7
+        with:
+          default_author: github_actions
+          message: ":robot: :arrow_up: Updated deps and lockfile\n\nThis is an automated action"
+  without_docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: python3 -m pip install --upgrade pip cookiecutter poetry poethepoet
+      - name: Setup env
+        run: |
+          echo "default_config:\n  add_docs: 'no'\n" > env.yml
+      - name: Build example template
+        run: cookiecutter . --no-input --config-file env.yml
+             cd cool-example
+      - name: Update example template
+        run: poetry update
+      - name: Check for differences
+        uses: andymckay/cancel-action@0.2
+        if: |
+            ! diff \
+            '../{{ cookiecutter.pypi_name }}/{% if cookiecutter.add_docs == "no" %}poetry.lock{% endif %}' \
+            poetry.lock
+      - name: Commit updated
+        run: cp poetry.lock '../{{ cookiecutter.pypi_name }}/{% if cookiecutter.add_docs == "no" %}poetry.lock{% endif %}'
+      - uses: EndBug/add-and-commit@v7
+        with:
+          default_author: github_actions
+          message: ":robot: :arrow_up: Updated deps and lockfile\n\nThis is an automated action"
