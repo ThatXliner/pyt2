@@ -28,6 +28,7 @@ jobs:
         working-directory: ./cool-example
       - name: Commit updated
         run: cp poetry.lock '../{{ cookiecutter.pypi_name }}/{% if cookiecutter.add_docs == "yes" %}poetry.lock{% endif %}'
+        working-directory: ./cool-example
       - uses: EndBug/add-and-commit@v7
         with:
           default_author: github_actions
@@ -59,6 +60,7 @@ jobs:
         working-directory: ./cool-example
       - name: Commit updated
         run: cp poetry.lock '../{{ cookiecutter.pypi_name }}/{% if cookiecutter.add_docs == "no" %}poetry.lock{% endif %}'
+        working-directory: ./cool-example
       - uses: EndBug/add-and-commit@v7
         with:
           default_author: github_actions
