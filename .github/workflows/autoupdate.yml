@@ -1,5 +1,6 @@
 name: Autoupdate
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 0 * * *"  # Run every single day
 jobs:
