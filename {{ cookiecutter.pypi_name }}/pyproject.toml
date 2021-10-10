@@ -38,23 +38,27 @@ Sphinx = "^4.0.0"{% endif %}
 [tool.poe.tasks]
 docs = {cmd = "sphinx-build docs build", help = "Build documentation"}
 
-format = ["black", "isort"]
+# Code formatting
 black = {cmd = "black .", help = "Run black on codebase"}
 isort = {cmd = "isort . --profile=black", help = "Run isort on codebase"}
+format = ["black", "isort"]
+
+# Code linting
 mypy = {cmd = "mypy {{ cookiecutter.module_name }} --strict", help = "Run MyPy on codebase"}
 pylint = {cmd = "pylint {{ cookiecutter.module_name }} --fail-under=8", help = "Run Pylint on codebase"}
+check_black = {"cmd" = "black {{ cookiecutter.module_name }} --check"}
+check_isort = {"cmd" = "isort {{ cookiecutter.module_name }} --check --profile=black"}
 
-_black = {"cmd" = "black {{ cookiecutter.module_name }} --check"}
-_isort = {"cmd" = "isort {{ cookiecutter.module_name }} --check --profile=black"}
-style = ["_isort", "_black"]
-codebase = ["pylint","mypy"]
+# Combining the 2
+style = ["check_black", "check_isort"]
+codebase = ["pylint", "mypy"]
+
 lint = ["style", "codebase"]
 
 test = {cmd = "pytest -vvv", help = "Run test suite"}
-cov = {cmd = "pytest -vvv --cov={{ cookiecutter.module_name }} --cov-report=html", help = "Run test suite with codecoverage (HTML format)"}
-codecov = {cmd = "pytest -vvv --cov={{ cookiecutter.module_name }} --cov-report=xml", help = "Run test suite with codecoverage (XML format)"}
-fcov = {cmd = "pytest -vvv --cov={{ cookiecutter.module_name }} --cov-report=html -n auto", help = "Run test suite with codecoverage in parallel. May decrease execution time"}
-ftest = {cmd = "pytest -vvv -n auto", help = "Run test suite in parallel. May decrease execution time"}
+ci = {cmd = "pytest -vvv --cov={{ cookiecutter.module_name }} --cov-report=xml", help = "Run test suite with codecoverage (XML format)"}
+
+dev = {cmd = "pytest -vvv -n auto --cov={{ cookiecutter.module_name }} --cov-report=html", help = "Run test suite for developers. Requires pytest-xdist"}
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
