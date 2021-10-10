@@ -22,7 +22,7 @@ jobs:
           poetry install
           poetry install  # Second time to install the project
       - name: Run test suite
-        run: poe codecov
+        run: poe ci
       - name: Upload to CodeCov
         uses: codecov/codecov-action@v1
   docs:
