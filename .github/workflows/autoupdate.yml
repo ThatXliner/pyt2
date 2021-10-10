@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: 3.9
       - name: Install dependencies
-        run: python3 -m pip install --upgrade pip cookiecutter poetry poethepoet
+        run: python3 -m pip install --upgrade pip cookiecutter poetry
       - name: Build example template
         run: cookiecutter . --no-input
              cd cool-example
@@ -42,7 +42,7 @@ jobs:
         with:
           python-version: 3.9
       - name: Install dependencies
-        run: python3 -m pip install --upgrade pip cookiecutter poetry poethepoet
+        run: python3 -m pip install --upgrade pip cookiecutter poetry
       - name: Setup env
         run: |
           echo "default_config:\n  add_docs: 'no'\n" > env.yml
