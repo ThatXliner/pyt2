@@ -20,7 +20,7 @@ I've seen [many other projects like this](https://github.com/search?q=python+coo
      - :octocat: Uses GitHub Actions for CI
      - (Optional) :smile_cat: Documentation via Sphinx
  - :printer: Generation features
-     - :lock: Pre-computed lockfile (`poetry.lock`)
+     - :lock: Pre-computed lockfile (`poetry.lock`) with up-to-date dependancies via CI ([![Autoupdate](https://github.com/ThatXliner/pyt2/actions/workflows/autoupdate.yml/badge.svg)](https://github.com/ThatXliner/pyt2/actions/workflows/autoupdate.yml))
      - :bookmark: Has a `test_version.py` which will test if the `__version__` metadata variable present in the package's name is equal to the one in the `pyproject.toml`
      - :robot: Optional post-generation hooks. Runs `git init` and/or `poetry install`
      - (Optional) :clapper: `__main__.py` and `[tool.poetry.scripts]` entry point generation (for applications)
