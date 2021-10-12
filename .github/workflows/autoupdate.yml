@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: "0 0 * * *"  # Run every single day
 jobs:
-  with_docs:
+  main:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -29,6 +29,8 @@ jobs:
       - name: Commit updated
         run: cp poetry.lock '../{{ cookiecutter.pypi_name }}/{% if cookiecutter.add_docs == "yes" %}poetry.lock{% endif %}'
         working-directory: ./cool-example
+      - name: Clean
+        run: rm -rf cool-example
       - name: Setup env
         run: |
           echo "default_context:\n  add_docs: no\n" > env.yml
