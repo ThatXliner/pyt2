@@ -43,7 +43,7 @@ jobs:
       - name: Check for differences
         id: diff-no-doc
         run: |
-          diff \
+          ! diff \
           '../{{ cookiecutter.pypi_name }}/{% if cookiecutter.add_docs == "no" %}poetry.lock{% endif %}' \
           poetry.lock || echo "::set-output name=should_commit::false"
         working-directory: ./cool-example
