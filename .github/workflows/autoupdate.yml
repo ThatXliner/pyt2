@@ -33,7 +33,7 @@ jobs:
         working-directory: ./cool-example
       - name: Clean up built template
         run: rm -rf cool-example
-      - name: Build example template (without docs)
+      - name: Build template (without docs)
         run: |
           echo "default_context:\n  add_docs: no\n" > env.yml && cookiecutter . --no-input --config-file env.yml
       - name: Update template
@@ -50,7 +50,8 @@ jobs:
         if: ${{ !contains(steps.diff-no-docs.outputs.should_commit, 'false') }}
         run: cp poetry.lock '../{{ cookiecutter.pypi_name }}/{% if cookiecutter.add_docs == "no" %}poetry.lock{% endif %}'
         working-directory: ./cool-example
-      - run: rm -rf cool-example env.yml
+      - name: Clean up files
+        run: rm -rf cool-example env.yml
       - name: Commit updated lockfiles
         uses: EndBug/add-and-commit@v7
         if: ${{ !contains(steps.*.outputs.should_commit, 'false') }}
