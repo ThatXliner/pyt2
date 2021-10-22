@@ -5,9 +5,10 @@
 
 <!--Which issues does this PR fix? Example:
 
- - #69
- - #420
- - #69420
+ - Closes #69
+ - Resolves #420
+ - Fixes #69420
+
 -->
 
 **Description of PR**
