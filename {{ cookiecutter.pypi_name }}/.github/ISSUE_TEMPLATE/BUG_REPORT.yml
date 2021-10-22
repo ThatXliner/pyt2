@@ -34,7 +34,7 @@ body:
     attributes:
       label: Other information
       description: Other additional information that may deem useful. If you're sending code, please make an [MCVE](https://stackoverflow.com/help/minimal-reproducible-example)
-      placeholder: "Environment, debug logs, etc."
+      placeholder: "Environment, OS, debug logs, etc."
     validations:
       required: false
   - type: input
