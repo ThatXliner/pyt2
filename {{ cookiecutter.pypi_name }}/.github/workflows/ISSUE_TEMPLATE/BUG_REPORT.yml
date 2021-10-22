@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report! :hugging_face:
+        Thanks for taking the time to fill out this bug report! 🤗
   - type: textarea
     id: bug-info
     attributes:
@@ -33,14 +33,8 @@ body:
     id: other-info
     attributes:
       label: Other information
-      description: Other additional information such as environment, debug logs, etc.
-      placeholder: |
-        Here's my logs.txt:
-        ```
-        GET https://www.youtube.com/watch?v=dQw4w9WgXcQ -> 200
-        STATUS rickrolled: true
-        TROLL
-        ```
+      description: Other additional information that may deem useful. If you're sending code, please make an [MCVE](https://stackoverflow.com/help/minimal-reproducible-example)
+      placeholder: "Environment, debug logs, etc."
     validations:
       required: false
   - type: input
@@ -56,11 +50,11 @@ body:
     id: generic-bug-report-checklist
     attributes:
       label: Prerequisites 
-      description: Make sure you have done all of the following:
+      description: "Make sure you have done all of the following:"
       options:
         - label: I have searched the [issues](https://github.com/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}/issues) and believe that it has not already been reported
           required: true
         - label: I have made sure this bug reproduces on the latest version
           required: true
-        - label: I agree to follow this project's Code of Conduct
+        - label: "I agree to follow this project's Code of Conduct"
           required: true
