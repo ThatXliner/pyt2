@@ -4,7 +4,7 @@ title: "[REQUEST]: "
 labels: ["enhancement"]
 body:
   - type: checkboxes
-    id: generic-bug-report-checklist
+    id: generic-feature-request-checklist
     attributes:
       label: Prerequisites 
       description: "Before you start, make sure you have done all of the following:"
@@ -21,6 +21,6 @@ body:
       label: Feature description
       description: Describe the feature
       placeholder: Tell us what you want to happen, and why can't it happen with our project's current customization (if you want to request enhancements to the plugin system/configuration/customization system, please file a seperate feature request for that)
-      value: "Example: I want X which does Y, and this is a core change because Z"
+      value: "Example: I want X which does Y, and this is a core change/I can't do right now because of Z"
     validations:
       required: true
