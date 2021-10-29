@@ -2,7 +2,7 @@ name: Autoupdate
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * *"  # Run every single day
+    - cron: "0 0 1 * *"  # Run every month
 jobs:
   main:
     runs-on: ubuntu-latest
