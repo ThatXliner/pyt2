@@ -67,19 +67,4 @@ jobs:
           python3 -m pip install --upgrade pip poetry
       - name: Build project
         run: poetry build
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository code
-        uses: actions/checkout@v2
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-      - name: Install dependencies
-        run: |
-          python3 -m pip install --upgrade pip poetry poethepoet
-          poetry install
-      - name: Lint codebase
-        run: poe lint
 {% endraw %}

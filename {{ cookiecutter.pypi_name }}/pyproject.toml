@@ -55,10 +55,10 @@ codebase = ["pylint", "mypy"]
 
 lint = ["style", "codebase"]
 
-test = {cmd = "pytest -vvv", help = "Run test suite"}
-ci = {cmd = "pytest -vvv --cov={{ cookiecutter.module_name }} --cov-report=xml", help = "Run test suite with codecoverage (XML format)"}
+test = {cmd = "pytest", help = "Simply run test suite"}
+ci = {cmd = "pytest -vvv --cov={{ cookiecutter.module_name }} --cov-report=xml", help = "Run test suite with code coverage (XML format)"}
 
-dev = {cmd = "pytest -vvv -n auto --cov={{ cookiecutter.module_name }} --cov-report=html", help = "Run test suite for developers. Requires pytest-xdist"}
+dev = {cmd = "pytest -vvv --cov={{ cookiecutter.module_name }} --cov-report=html", help = "Run test suite for developers (HTML code coverage report)"}
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
