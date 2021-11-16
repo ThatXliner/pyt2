@@ -18,6 +18,7 @@ I've seen [many other projects like this](https://github.com/search?q=python+coo
      - :musical_note: Uses Poetry to manage the project
      - :notes: Has Poe tasks
      - :octocat: Uses GitHub Actions for CI
+     - :eyes: [DeepSource](https://deepsource.io) for linting
      - (Optional) :smile_cat: Documentation via Sphinx
  - :printer: Generation features
      - :lock: Pre-computed lockfile (`poetry.lock`) with up-to-date dependancies via CI ([![Autoupdate](https://github.com/ThatXliner/pyt2/actions/workflows/autoupdate.yml/badge.svg)](https://github.com/ThatXliner/pyt2/actions/workflows/autoupdate.yml))
