@@ -9,17 +9,16 @@ I've seen [many other projects like this](https://github.com/search?q=python+coo
 # :sparkles: Features
 
  - :open_file_folder: Structure and project style
-     - :art: Uses the linters
-       - :black_circle: Black
-       - :pencil2: Isort
-       - :snake: MyPy
-       - :memo: Pylint
-     - &#x1F9EA; Hypothesis for testing
-     - :musical_note: Uses Poetry to manage the project
-     - :notes: Has Poe tasks
-     - :octocat: Uses GitHub Actions for CI
-     - :eyes: [DeepSource](https://deepsource.io) for linting
-     - (Optional) :smile_cat: Documentation via Sphinx
+     - :art: Uses the linters (via [DeepSource](https://deepsource.io))
+       - :black_circle: [Black](https://github.com/psf/black)
+       - :pencil2: [Isort](https://github.com/PyCQA/isort)
+       - :snake: [MyPy](https://github.com/python/mypy)
+       - :memo: [Pylint](https://www.pylint.org)
+     - &#x1F9EA; [Hypothesis](https://hypothesis.works) and [Pytest](https://pytest.org) for testing
+     - :musical_note: Uses [Poetry](https://python-poetry.org) to manage the project
+     - :notes: Has [Poe](https://github.com/nat-n/poethepoet) tasks
+     - :octocat: Uses [GitHub Actions](https://github.com/features/actions) for CI
+     - (Optional) :smile_cat: Documentation via [Sphinx](https://www.sphinx-doc.org/en/master/)
  - :printer: Generation features
      - :lock: Pre-computed lockfile (`poetry.lock`) with up-to-date dependancies via CI ([![Autoupdate](https://github.com/ThatXliner/pyt2/actions/workflows/autoupdate.yml/badge.svg)](https://github.com/ThatXliner/pyt2/actions/workflows/autoupdate.yml))
      - :bookmark: Has a `test_version.py` which will test if the `__version__` metadata variable present in the package's name is equal to the one in the `pyproject.toml`
