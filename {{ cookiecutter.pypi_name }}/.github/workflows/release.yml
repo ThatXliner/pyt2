@@ -1,0 +1,25 @@
+{% raw %}
+name: Release Asset Uploader
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install dependancies
+        run: python3 -m pip install poetry
+      - name: Build artifacts
+        run: poetry build
+      - name: Upload artifacts
+        uses: shogo82148/actions-upload-release-asset@v1
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: dist/*
+{% endraw %}
