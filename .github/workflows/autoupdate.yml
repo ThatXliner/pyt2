@@ -16,46 +16,14 @@ jobs:
           python-version: 3.9
       - name: Install dependencies
         run: python3 -m pip install --upgrade pip cookiecutter poetry
-      - name: Build template (with docs)
-        run: cookiecutter . --no-input
       - name: Update template
-        run: poetry update
-        working-directory: ./cool-example
-      - name: Check for differences
-        id: diff-docs
-        run: |
-          ! diff \
-          '../{{ cookiecutter.pypi_name }}/{% if cookiecutter.add_docs == "yes" %}poetry.lock{% endif %}' \
-          poetry.lock || echo "::set-output name=should_commit::false"
-        working-directory: ./cool-example
-      - name: Copy updated lockfile
-        if: ${{ !contains(steps.diff-docs.outputs.should_commit, 'false') }}
-        run: cp poetry.lock '../{{ cookiecutter.pypi_name }}/{% if cookiecutter.add_docs == "yes" %}poetry.lock{% endif %}'
-        working-directory: ./cool-example
-      - name: Clean up built template
-        run: rm -rf cool-example
-      - name: Build template (without docs)
-        run: |
-          echo "default_context:\n  add_docs: no\n" > env.yml && cookiecutter . --no-input --config-file env.yml
-      - name: Update template
-        run: poetry update
-        working-directory: ./cool-example
-      - name: Check for differences
-        id: diff-no-docs
-        run: |
-          ! diff \
-          '../{{ cookiecutter.pypi_name }}/{% if cookiecutter.add_docs == "no" %}poetry.lock{% endif %}' \
-          poetry.lock || echo "::set-output name=should_commit::false"
-        working-directory: ./cool-example
-      - name: Copy updated lockfile
-        if: ${{ !contains(steps.diff-no-docs.outputs.should_commit, 'false') }}
-        run: cp poetry.lock '../{{ cookiecutter.pypi_name }}/{% if cookiecutter.add_docs == "no" %}poetry.lock{% endif %}'
-        working-directory: ./cool-example
-      - name: Clean up files
-        run: rm -rf cool-example env.yml
+        run: make all
+      - name: Check if we should commit
+        id: commit_check
+        run: git diff --quiet || echo "::set-output name=should_commit::false"
       - name: Commit updated lockfiles
         uses: EndBug/add-and-commit@v7
-        if: ${{ !contains(steps.*.outputs.should_commit, 'false') }}
+        if: ${{ !contains(steps.commit_check.outputs.should_commit, 'false') }}
         with:
           default_author: github_actions
           message: ":robot: :arrow_up: Updated deps and lockfile\n\nThis is an automated action"
