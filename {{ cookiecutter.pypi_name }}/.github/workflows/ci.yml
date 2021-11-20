@@ -44,10 +44,9 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v2
+      - uses: actions/setup-python@v2
         with:
-          python-version: 3.9
+          python-version: 3
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip poetry poethepoet
@@ -60,10 +59,9 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v2
+      - uses: actions/setup-python@v2
         with:
-          python-version: 3.9
+          python-version: 3
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip poetry
