@@ -1,5 +1,6 @@
 name: Autoupdate
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: "0 0 1 * *"  # Run every month
