@@ -25,14 +25,17 @@ jobs:
         uses: snok/install-poetry@v1
       - name: Install dependencies (UNIX)
         if: {{ !runner.os == "Windows" }}
-        run: |
-          python3 -m pip install poethepoet
-          poetry install
-          poetry install  # Second time to install the project
+        run: python3 -m pip install poethepoet
       - name: Install dependencies (Windows)
         if: {{ runner.os == "Windows" }}
+        run: python -m pip install poethepoet
+      - name: Get cached venv
+        uses: actions/cache@v2
+        with:
+          path: .venv
+          key: ${{ runner.os }}-venv-${{ hashFiles('**/poetry.lock') }}
+      - name: Set up .venv
         run: |
-          python -m pip install poethepoet
           poetry install
           poetry install  # Second time to install the project
       - name: Run test suite
