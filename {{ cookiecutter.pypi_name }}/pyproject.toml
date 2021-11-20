@@ -17,13 +17,14 @@ classifiers = [
 documentation = "https://{{ cookiecutter.module_name }}.readthedocs.io/en/latest/index.html"{% endif %}
 homepage = "https://github.com/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}"
 # keywords = ["awesome", "project"]  # Maximum of 5 keywords
+
 [tool.poetry.dependencies]
 python = "^3.7"{% if cookiecutter.is_app == "yes" %}
 
 [tool.poetry.scripts]
 {{ cookiecutter.module_name }} = "{{ cookiecutter.module_name }}.__main__:main"
-
 {% endif %}
+
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
 black = "^21.5b0"
