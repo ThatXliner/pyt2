@@ -33,33 +33,38 @@ isort = "^5.8.0"
 pylint = "^2.8.2"
 toml = "^0.10.2"
 hypothesis = "^6.12.0"
+shed = "^0.5.3"
 pytest-cov = "^2.11.1"{% if cookiecutter.add_docs == "yes" %}
 Sphinx = "^4.0.0"{% endif %}
 
 [tool.poe.tasks]
-docs = {cmd = "sphinx-build docs build", help = "Build documentation"}
+    [tool.poe.tasks.docs]
+    cmd = "sphinx-build docs build"
+    help = "Build documentation"
 
-# Code formatting
-black = {cmd = "black .", help = "Run black on codebase"}
-isort = {cmd = "isort . --profile=black", help = "Run isort on codebase"}
-format = ["black", "isort"]
+    [tool.poe.tasks.format]
+    cmd = "shed"
+    help = "Format code"
+
+    [tool.poe.tasks.lint]
+    sequence = ["style", "codebase"]
+    help = "Lint codebase"
+
+    [tool.poe.tasks.test]
+    cmd = "pytest -vvv --cov={{ cookiecutter.module_name }}"
+    help = "Simply run test suite"
+
+    [tool.poe.tasks.ci]
+    cmd = "pytest -vvv --cov={{ cookiecutter.module_name }} --cov-report=xml"
+    help = "This workflow is for Github Actions"
 
 # Code linting
-mypy = {cmd = "mypy {{ cookiecutter.module_name }} --strict", help = "Run MyPy on codebase"}
+mypy   = {cmd = "mypy {{ cookiecutter.module_name }} --strict", help = "Run MyPy on codebase"}
 pylint = {cmd = "pylint {{ cookiecutter.module_name }} --fail-under=8", help = "Run Pylint on codebase"}
 check_black = {"cmd" = "black {{ cookiecutter.module_name }} --check"}
 check_isort = {"cmd" = "isort {{ cookiecutter.module_name }} --check --profile=black"}
-
-# Combining the 2
-style = ["check_black", "check_isort"]
+style    = ["check_black", "check_isort"]
 codebase = ["pylint", "mypy"]
-
-lint = ["style", "codebase"]
-
-test = {cmd = "pytest", help = "Simply run test suite"}
-ci = {cmd = "pytest -vvv --cov={{ cookiecutter.module_name }} --cov-report=xml", help = "Run test suite with code coverage (XML format)"}
-
-dev = {cmd = "pytest -vvv --cov={{ cookiecutter.module_name }} --cov-report=html", help = "Run test suite for developers (HTML code coverage report)"}
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
