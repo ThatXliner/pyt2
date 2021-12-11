@@ -31,6 +31,8 @@ $ poetry add {{ cookiecutter.pypi_name }}
 
 ## License
 
+Copyright © 2021, {{ cookiecutter.author }}
+
 This project is licensed under the [GNU GPL v3+](https://github.com/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}/blob/main/LICENSE.txt).
 
 In short, this means you can do anything with it (distribute, modify, sell) but if you were publish your changes, you must make the source code and build instructions readily available.
