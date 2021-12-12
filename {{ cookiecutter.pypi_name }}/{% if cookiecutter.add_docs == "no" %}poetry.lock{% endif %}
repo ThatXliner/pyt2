@@ -113,7 +113,7 @@ toml = ["tomli"]
 
 [[package]]
 name = "hypothesis"
-version = "6.31.3"
+version = "6.31.4"
 description = "A library for property-based testing"
 category = "dev"
 optional = false
@@ -581,8 +581,8 @@ coverage = [
     {file = "coverage-6.2.tar.gz", hash = "sha256:e2cad8093172b7d1595b4ad66f24270808658e11acf43a8f95b41276162eb5b8"},
 ]
 hypothesis = [
-    {file = "hypothesis-6.31.3-py3-none-any.whl", hash = "sha256:0d425134d76049da0bdc6df1258af1be80bb04646cb127f4c07664545ea338d7"},
-    {file = "hypothesis-6.31.3.tar.gz", hash = "sha256:9ca76379ce7f832e8bfa9f3cadd4cfabc558baf2a8416bd99c8940ace009adad"},
+    {file = "hypothesis-6.31.4-py3-none-any.whl", hash = "sha256:c31b68e998f13e14da759c2708131443445da1e33e11f15251bb35b45cbad91b"},
+    {file = "hypothesis-6.31.4.tar.gz", hash = "sha256:7fa3911d7be699a3139dfa1d9625deed649f651beaab3422c0339742e66d32d0"},
 ]
 importlib-metadata = [
     {file = "importlib_metadata-4.8.2-py3-none-any.whl", hash = "sha256:53ccfd5c134223e497627b9815d5030edf77d2ed573922f7a0b8f8bb81a1c100"},
