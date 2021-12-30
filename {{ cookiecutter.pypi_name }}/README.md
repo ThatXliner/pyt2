@@ -14,13 +14,11 @@ You can get this project via `pip`
 $ pip install {{ cookiecutter.pypi_name }}
 ```
 {% if cookiecutter.is_app == "yes" %}
-
 But we **highly recommend** you install this project using [pipx](https://pypa.github.io/pipx/)
 
 ```bash
 $ pipx install {{ cookiecutter.pypi_name }}
 ```
-
 {% else %}
 Or, if you're using [Poetry](https://python-poetry.org)
 
