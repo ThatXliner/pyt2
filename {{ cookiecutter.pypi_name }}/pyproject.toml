@@ -34,7 +34,8 @@ pylint = "^2.8.2"
 toml = "^0.10.2"
 hypothesis = "^6.12.0"
 shed = "^0.5.3"
-pytest-cov = "^2.11.1"{% if cookiecutter.add_docs == "yes" %}
+pytest-cov = "^2.11.1"
+pytest-clarity = "^1.0.1"{% if cookiecutter.add_docs == "yes" %}
 Sphinx = "^4.0.0"{% endif %}
 
 [tool.poe.tasks]
