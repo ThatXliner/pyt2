@@ -1,10 +1,11 @@
 {% raw %}name: CI
 on:
-  push:
-  pull_request:
   schedule:
     - cron: "0 0 1 * *"  # Run every month
   # This way, we can make sure code doesn't break via external dependancies
+  push:
+  pull_request:
+
 jobs:
   test:
     strategy:
