@@ -46,9 +46,9 @@ check_black = {"cmd" = "black {{ cookiecutter.module_name }} --check"}
 check_isort = {"cmd" = "isort {{ cookiecutter.module_name }} --check --profile=black"}
 style    = ["check_black", "check_isort"]
 codebase = ["pylint", "mypy"]
-    [tool.poe.tasks.docs]
+{% if cookiecutter.add_docs == "yes" %}    [tool.poe.tasks.docs]
     cmd = "sphinx-build docs build"
-    help = "Build documentation"
+    help = "Build documentation"{% endif %}
 
     [tool.poe.tasks.format]
     cmd = "shed"
