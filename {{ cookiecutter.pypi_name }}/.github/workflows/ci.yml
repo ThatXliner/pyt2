@@ -41,7 +41,7 @@ jobs:
       - name: Run test suite
         run: poe ci
       - name: Upload to CodeCov
-        uses: codecov/codecov-action@v2{% endraw %}{% if cookiecutter.add_docs == "yes"}
+        uses: codecov/codecov-action@v2{% endraw %}{% if cookiecutter.add_docs == "yes" %}
   docs:
     runs-on: ubuntu-latest
     steps:
