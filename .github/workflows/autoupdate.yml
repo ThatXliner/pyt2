@@ -15,7 +15,7 @@ jobs:
         with:
           python-version: 3.9
       - name: Install dependencies
-        run: python3 -m pip install --upgrade pip cookiecutter poetry
+        run: python3 -m pip install --upgrade pip cookiecutter poetry poetryup
       - name: Update template
         run: make all
       - name: Check if we should commit
