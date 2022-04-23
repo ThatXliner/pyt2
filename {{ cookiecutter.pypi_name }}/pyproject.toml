@@ -27,14 +27,14 @@ python = "^3.7"{% if cookiecutter.is_app == "yes" %}
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
-black = "^21.5b0"
+black = "^22.3.0"
 mypy = "^0.942"
 isort = "^5.8.0"
 pylint = "^2.8.2"
 toml = "^0.10.2"
 hypothesis = "^6.12.0"
-shed = "^0.5.3"
-pytest-cov = "^2.11.1"
+shed = "^0.9.5"
+pytest-cov = "^3.0.0"
 pytest-clarity = "^1.0.1"{% if cookiecutter.add_docs == "yes" %}
 Sphinx = "^4.0.0"{% endif %}
 
