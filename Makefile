@@ -5,7 +5,7 @@ clean:
 	rm -rf cool-example env.yml
 run:
 	cookiecutter . --no-input --config-file env.yml
-	cd cool-example && poetryup
+	cd cool-example && poetryup --latest
 docs: clean
 	echo "default_context:\n  '(post-generation hook) install venv?': no\n  '(post-generation hook) run git init?': no\n" > env.yml
 	$(MAKE) run
