@@ -43,4 +43,4 @@ Why this is the name: **Py**thon **T**emplate **2**
 
 https://thatxliner.github.io/blog/2020/11/12/why-i-use-gnu-gpl.html
 
-But you can fork this and modify the license anyways.
+But you can fork this and modify the default license in the template anyways.
