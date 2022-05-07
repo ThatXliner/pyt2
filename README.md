@@ -6,7 +6,7 @@ My [second attempt](https://github.com/ThatXliner/Pytemplate) at making a Python
 
 I've seen [many other projects like this](https://github.com/search?q=python+cookiecutter) but I've never seen any of them follow the pattern I want.
 
-# :sparkles: Features
+## :sparkles: Features
 
  - :open_file_folder: Structure and project style
      - :art: Uses the linters (via [DeepSource](https://deepsource.io))
@@ -38,3 +38,9 @@ cookiecutter gh:ThatXliner/pyt2
 
 Pronunciation: *pit-too*
 Why this is the name: **Py**thon **T**emplate **2**
+
+## Why GPL?
+
+https://thatxliner.github.io/blog/2020/11/12/why-i-use-gnu-gpl.html
+
+But you can fork this and modify the license anyways.
