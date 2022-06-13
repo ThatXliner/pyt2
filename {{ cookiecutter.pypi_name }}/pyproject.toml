@@ -27,8 +27,8 @@ python = "^3.7"{% if cookiecutter.is_app == "yes" %}
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
-black = "^22.3.0"
-mypy = "^0.942"
+black = "*"
+mypy = "^0"
 isort = "^5.8.0"
 pylint = "^2.8.2"
 toml = "^0.10.2"
