@@ -42,8 +42,8 @@ Sphinx = "^4.0.0"{% endif %}
 # Code linting
 mypy   = {cmd = "mypy {{ cookiecutter.module_name }} --strict", help = "Run MyPy on codebase"}
 pylint = {cmd = "pylint {{ cookiecutter.module_name }} --fail-under=8", help = "Run Pylint on codebase"}
-check_black = {"cmd" = "black {{ cookiecutter.module_name }} --check"}
-check_isort = {"cmd" = "isort {{ cookiecutter.module_name }} --check --profile=black"}
+check_black = {cmd = "black {{ cookiecutter.module_name }} --check"}
+check_isort = {cmd = "isort {{ cookiecutter.module_name }} --check --profile=black"}
 style    = ["check_black", "check_isort"]
 codebase = ["pylint", "mypy"]
 {% if cookiecutter.add_docs == "yes" %}    [tool.poe.tasks.docs]
