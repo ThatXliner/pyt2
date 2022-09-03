@@ -19,7 +19,7 @@ homepage = "https://github.com/{{ cookiecutter.username }}/{{ cookiecutter.pypi_
 # keywords = ["awesome", "project"]  # Maximum of 5 keywords
 
 [tool.poetry.dependencies]
-python = "^3.7"{% if cookiecutter.is_app == "yes" %}
+python = "^3.8"{% if cookiecutter.is_app == "yes" %}
 
 [tool.poetry.scripts]
 {{ cookiecutter.module_name }} = "{{ cookiecutter.module_name }}.__main__:main"
