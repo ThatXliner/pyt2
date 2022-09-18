@@ -13,7 +13,7 @@ There are many ways you can contribute :smile:
 
 Remember to follow the [code of conduct](./CODE_OF_CONDUCT.md)
 
-We use [Poetry](https://python-poetry.org) to manage the project so make sure you have it. Once you do, set up the virtual environment after you cloned repo
+We use [Poetry](https://python-poetry.org) to manage the project so [make sure you have it](https://python-poetry.org/docs/#installation). Once you do, set up the virtual environment after you cloned repo
 
 ```
 $ poetry install
