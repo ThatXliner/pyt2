@@ -6,7 +6,9 @@
 [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
 [![codecov](https://codecov.io/gh/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}/branch/main/graph/badge.svg)](https://codecov.io/gh/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }})
 {% if cookiecutter.add_docs == "yes" %}[![Documentation Status](https://readthedocs.org/projects/{{ cookiecutter.module*name.replace("*", "") }}/badge/?version=latest)](https://{{ cookiecutter.module_name.replace("_", "") }}.readthedocs.io/en/latest/?badge=latest){% endif %}
-[![CI](https://github.com/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}/actions/workflows/ci.yml) [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{ cookiecutter.pypi_name }})](https://pypi.org/project/{{ cookiecutter.pypi_name }})
+[![CI](https://github.com/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}/actions/workflows/ci.yml)
+[![Lints](https://github.com/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}/actions/workflows/lints.yml/badge.svg?branch=main)](https://github.com/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}/actions/workflows/lints.yml)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{ cookiecutter.pypi_name }})](https://pypi.org/project/{{ cookiecutter.pypi_name }})
 [![PyPI](https://img.shields.io/pypi/v/{{ cookiecutter.pypi_name }})](https://pypi.org/project/{{ cookiecutter.pypi_name }})
 [![PyPI - License](https://img.shields.io/pypi/l/{{ cookiecutter.pypi_name }})](#license)
 
