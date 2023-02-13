@@ -40,11 +40,11 @@ Sphinx = "^4.0.0"{% endif %}
 [tool.poe.tasks]
 # Code linting
 mypy   = {cmd = "mypy {{ cookiecutter.module_name }} --strict", help = "Run MyPy on codebase"}
-pylint = {cmd = "pylint {{ cookiecutter.module_name }} --fail-under=8", help = "Run Pylint on codebase"}
+ruff = {cmd = "ruff check {{ cookiecutter.module_name }}", help = "Run Ruff on codebase"}
 check_black = {cmd = "black {{ cookiecutter.module_name }} --check"}
-check_isort = {cmd = "isort {{ cookiecutter.module_name }} --check --profile=black"}
-style    = ["check_black", "check_isort"]
-codebase = ["pylint", "mypy"]
+check_imports = {cmd = "ruff check {{ cookiecutter.module_name }} --select I"}
+style    = ["check_black", "check_imports"]
+codebase = ["ruff", "mypy"]
 {% if cookiecutter.add_docs == "yes" %}    [tool.poe.tasks.docs]
     cmd = "sphinx-build docs build"
     help = "Build documentation"{% endif %}
@@ -52,6 +52,10 @@ codebase = ["pylint", "mypy"]
     [tool.poe.tasks.format]
     cmd = "shed"
     help = "Format code"
+
+    [tool.poe.tasks.ruff]
+    cmd = "ruff {{ cookiecutter.module_name }} --fix"
+    help = "Ruff autofix"
 
     [tool.poe.tasks.lint]
     sequence = ["style", "codebase"]
@@ -69,3 +73,7 @@ codebase = ["pylint", "mypy"]
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+# Same as Black.
+line-length = 88
