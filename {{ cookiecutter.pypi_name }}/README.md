@@ -1,6 +1,13 @@
 # {{ cookiecutter.project_name }}
 
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/) [![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/) [![codecov](https://codecov.io/gh/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}/branch/main/graph/badge.svg)](https://codecov.io/gh/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}) {% if cookiecutter.add_docs == "yes" %}[![Documentation Status](https://readthedocs.org/projects/{{ cookiecutter.module*name.replace("*", "") }}/badge/?version=latest)](https://{{ cookiecutter.module_name.replace("_", "") }}.readthedocs.io/en/latest/?badge=latest){% endif %} [![CI](https://github.com/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}/actions/workflows/ci.yml) [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{ cookiecutter.pypi_name }})](https://pypi.org/project/{{ cookiecutter.pypi_name }}) [![PyPI](https://img.shields.io/pypi/v/{{ cookiecutter.pypi_name }})](https://pypi.org/project/{{ cookiecutter.pypi_name }}) [![PyPI - License](https://img.shields.io/pypi/l/{{ cookiecutter.pypi_name }})](#license)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+[![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
+[![codecov](https://codecov.io/gh/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}/branch/main/graph/badge.svg)](https://codecov.io/gh/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }})
+{% if cookiecutter.add_docs == "yes" %}[![Documentation Status](https://readthedocs.org/projects/{{ cookiecutter.module*name.replace("*", "") }}/badge/?version=latest)](https://{{ cookiecutter.module_name.replace("_", "") }}.readthedocs.io/en/latest/?badge=latest){% endif %}
+[![CI](https://github.com/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}/actions/workflows/ci.yml) [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/{{ cookiecutter.pypi_name }})](https://pypi.org/project/{{ cookiecutter.pypi_name }})
+[![PyPI](https://img.shields.io/pypi/v/{{ cookiecutter.pypi_name }})](https://pypi.org/project/{{ cookiecutter.pypi_name }})
+[![PyPI - License](https://img.shields.io/pypi/l/{{ cookiecutter.pypi_name }})](#license)
 
 > {{ cookiecutter.project_description }}
 

@@ -53,7 +53,7 @@ codebase = ["ruff", "mypy"]
     cmd = "shed"
     help = "Format code"
 
-    [tool.poe.tasks.ruff]
+    [tool.poe.tasks.fix-ruff]
     cmd = "ruff {{ cookiecutter.module_name }} --fix"
     help = "Ruff autofix"
 
