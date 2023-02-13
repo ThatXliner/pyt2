@@ -77,3 +77,4 @@ build-backend = "poetry.core.masonry.api"
 [tool.ruff]
 # Same as Black.
 line-length = 88
+select = ["ALL"]
