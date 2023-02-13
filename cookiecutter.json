@@ -1,13 +1,13 @@
 {
-	"project_name": "Cool Example",
-	"pypi_name": "{{ cookiecutter.project_name|lower|replace(\" \", \"-\") }}",
-	"module_name": "{{ cookiecutter.pypi_name|replace(\"-\", \"_\") }}",
-	"project_description": "An awesome project",
-	"add_docs": ["yes", "no"],
-	"is_app": ["yes", "no"],
-	"author": "Bryan Hu",
-	"username": "ThatXliner",
-	"email": "bryan.hu.2020@gmail.com",
-	"(post-generation hook) install venv?": ["yes", "no"],
-	"(post-generation hook) run git init?": ["yes", "no"]
+  "project_name": "Cool Example",
+  "pypi_name": "{{ cookiecutter.project_name|lower|replace(\" \", \"-\") }}",
+  "module_name": "{{ cookiecutter.pypi_name|replace(\"-\", \"_\") }}",
+  "project_description": "An awesome project",
+  "add_docs": true,
+  "is_app": true,
+  "author": "Bryan Hu",
+  "username": "ThatXliner",
+  "email": "bryan.hu.2020@gmail.com",
+  "(post-generation hook) install venv?": true,
+  "(post-generation hook) run git init?": true
 }

@@ -13,13 +13,13 @@ classifiers = [
     "Operating System :: OS Independent",
     "Development Status :: 4 - Beta",
     "Natural Language :: English",
-]{% if cookiecutter.add_docs == "yes" %}
+]{% if cookiecutter.add_docs %}
 documentation = "https://{{ cookiecutter.module_name.replace("_", "") }}.readthedocs.io/en/latest/index.html"{% endif %}
 homepage = "https://github.com/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}"
 # keywords = ["awesome", "project"]  # Maximum of 5 keywords
 
 [tool.poetry.dependencies]
-python = "^3.8"{% if cookiecutter.is_app == "yes" %}
+python = "^3.8"{% if cookiecutter.is_app %}
 
 [tool.poetry.scripts]
 {{ cookiecutter.module_name }} = "{{ cookiecutter.module_name }}.__main__:main"
@@ -34,7 +34,7 @@ toml = "^0.10.2"
 hypothesis = "^6.12.0"
 shed = "^0.9.5"
 pytest-cov = "^3.0.0"
-pytest-clarity = "^1.0.1"{% if cookiecutter.add_docs == "yes" %}
+pytest-clarity = "^1.0.1"{% if cookiecutter.add_docs %}
 Sphinx = "^4.0.0"{% endif %}
 
 [tool.poe.tasks]
@@ -45,7 +45,7 @@ check_black = {cmd = "black {{ cookiecutter.module_name }} --check"}
 check_imports = {cmd = "ruff check {{ cookiecutter.module_name }} --select I"}
 style    = ["check_black", "check_imports"]
 codebase = ["ruff", "mypy"]
-{% if cookiecutter.add_docs == "yes" %}    [tool.poe.tasks.docs]
+{% if cookiecutter.add_docs %}    [tool.poe.tasks.docs]
     cmd = "sphinx-build docs build"
     help = "Build documentation"{% endif %}
 
