@@ -35,7 +35,7 @@ hypothesis = "^6.12.0"
 shed = "^0.9.5"
 pytest-cov = "^3.0.0"
 pytest-clarity = "^1.0.1"{% if cookiecutter.add_docs %}
-Sphinx = "^4.0.0"{% endif %}
+Sphinx = "^6.1.3"{% endif %}
 
 [tool.poe.tasks]
 # Code linting
