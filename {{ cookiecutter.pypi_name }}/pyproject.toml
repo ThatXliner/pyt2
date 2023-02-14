@@ -25,7 +25,7 @@ python = "^3.8"{% if cookiecutter.is_app %}
 {{ cookiecutter.module_name }} = "{{ cookiecutter.module_name }}.__main__:main"
 {% endif %}
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 pytest = "^7.1.2"
 black = "*"
 mypy = "^0"
