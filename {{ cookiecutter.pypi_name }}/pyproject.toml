@@ -81,7 +81,7 @@ line-length = 88
 select = ["ALL"]
 ignore = [
     # "D",    # "No docs"
-    "T201", # "Don't use print"
+    "T20",  # "Don't use print or pprint"
     # "ANN",  # Type annotation errors (or the lack of it)
     "FBT",  # I actually don't know why this exists
             # and it seems useless so ignore it
