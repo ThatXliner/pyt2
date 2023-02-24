@@ -25,16 +25,26 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install dependencies (UNIX)
+          cache: 'pip'
+      - uses: actions/cache@v3
+        with:
+          path: |
+            .venv
+            .pytest_cache
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install Poetry and Poe (UNIX)
         if: runner.os != 'Windows'
-        run: |
-          python3 -m pip install poetry==$POETRY_VERSION poethepoet
-          poetry install
-          poetry install  # Second time to install the project
-      - name: Install dependencies (Windows)
+        run: python3 -m pip install poetry==$POETRY_VERSION poethepoet
+      - name: Install Poetry and Poe (Windows)
         if: runner.os == 'Windows'
-        run: |
-          python -m pip install poetry==$env:POETRY_VERSION poethepoet
+        run: python -m pip install poetry==$env:POETRY_VERSION poethepoet
+
+      - name: Install dependencies
+        run: |       
+          poetry config virtualenvs.in-project true
           poetry install
           poetry install  # Second time to install the project
       - name: Run test suite
@@ -49,9 +59,18 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3
+          cache: 'pip'
+      - uses: actions/cache@v3
+        with:
+          path: .venv
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip poetry==$POETRY_VERSION poethepoet
+          poetry config virtualenvs.in-project true
           poetry install
           poetry install  # Second time to install the project
       - name: Build docs
@@ -64,10 +83,44 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3
+          cache: 'pip'
       - name: Install Poetry $POETRY_VERSION
-        run: |
-          curl -sSL https://install.python-poetry.org | POETRY_HOME="$HOME/.local" python3 -
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
+        run: python3 -m pip install --upgrade pip poetry==$POETRY_VERSION
       - name: Build project
         run: poetry build
+  lints:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3
+          cache: 'pip'
+      - uses: actions/cache@v3
+        with:
+          path: .venv
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install Poetry and Poe (UNIX)
+        if: runner.os != 'Windows'
+        run: python3 -m pip install poetry==$POETRY_VERSION poethepoet
+      - name: Install Poetry and Poe (Windows)
+        if: runner.os == 'Windows'
+        run: python -m pip install poetry==$env:POETRY_VERSION poethepoet
+
+      - name: Install dependencies
+        run: |       
+          poetry config virtualenvs.in-project true
+          poetry install
+          poetry install  # Second time to install the project
+      - name: Run style lints
+        run: poe style
+      - name: Run ruff lints
+        run: poe codebase
+      - name: Run mypy lints
+        run: poe mypy
 {% endraw %}
