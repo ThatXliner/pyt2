@@ -1,4 +1,4 @@
-{% raw %}name: Code Quality
+{% raw %}name: Lints
 on:
   push:
   pull_request:
@@ -27,7 +27,7 @@ jobs:
           poetry install  # Second time to install the project
       - name: Run lints
         run: poe style
-  linters:
+  ruff:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -49,4 +49,26 @@ jobs:
           poetry install  # Second time to install the project
       - name: Run lints
         run: poe codebase
+  mypy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3
+      - name: Install dependencies (UNIX)
+        if: runner.os != 'Windows'
+        run: |
+          python3 -m pip install poetry==$POETRY_VERSION poethepoet
+          poetry install
+          poetry install  # Second time to install the project
+      - name: Install dependencies (Windows)
+        if: runner.os == 'Windows'
+        run: |
+          python -m pip install poetry==$env:POETRY_VERSION poethepoet
+          poetry install
+          poetry install  # Second time to install the project
+      - name: Run lints
+        run: poe mypy
 {% endraw %}
