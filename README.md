@@ -9,11 +9,10 @@ I've seen [many other projects like this](https://github.com/search?q=python+coo
 ## :sparkles: Features
 
  - :open_file_folder: Structure and project style
-     - :art: Uses the linters (via [DeepSource](https://deepsource.io))
+     - :art: Uses the linters
        - :black_circle: [Black](https://github.com/psf/black)
-       - :pencil2: [Isort](https://github.com/PyCQA/isort)
        - :snake: [MyPy](https://github.com/python/mypy)
-       - :memo: [Pylint](https://www.pylint.org)
+       - :zap: [Ruff](https://beta.ruff.rs/docs/) (which includes `isort`)
      - &#x1F9EA; [Hypothesis](https://hypothesis.works) and [Pytest](https://pytest.org) for testing
      - :musical_note: Uses [Poetry](https://python-poetry.org) to manage the project
      - :notes: Has [Poe](https://github.com/nat-n/poethepoet) tasks
@@ -39,8 +38,8 @@ cookiecutter gh:ThatXliner/pyt2
 Pronunciation: *pit-too*
 Why this is the name: **Py**thon **T**emplate **2**
 
-## Why GPL?
+## Why is the default templated license GPL?
 
-https://thatxliner.github.io/blog/2020/11/12/why-i-use-gnu-gpl.html
+[Because it's usually better](https://thatxliner.github.io/blog/2020/11/12/why-i-use-gnu-gpl.html).
 
-But you can fork this and modify the default license in the template anyways.
+But you can fork this and modify the default license in the template anyways. *This template*, however, is released to the **Public Domain**.
