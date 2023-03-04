@@ -13,6 +13,7 @@ classifiers = [
     "Operating System :: OS Independent",
     "Development Status :: 4 - Beta",
     "Natural Language :: English",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
 ]{% if cookiecutter.add_docs %}
 documentation = "https://{{ cookiecutter.module_name.replace("_", "") }}.readthedocs.io/en/latest/index.html"{% endif %}
 homepage = "https://github.com/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}"
