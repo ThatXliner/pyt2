@@ -4,7 +4,7 @@ import subprocess, shutil
 os.rmdir("docs")
 {% endif %}
 
-if "yes" in {
+if "True" in {
     '{{ cookiecutter["(post-generation hook) install venv?"] }}',
     '{{ cookiecutter["(post-generation hook) run git init?"] }}',
 }:
