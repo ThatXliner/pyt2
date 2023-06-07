@@ -10,6 +10,7 @@ license = "GPL-3.0-or-later"
 classifiers = [
     # Get the list of trove classifiers here: https://pypi.org/classifiers/
     "Programming Language :: Python :: Implementation :: CPython",
+    "Typing :: Typed",
     "Operating System :: OS Independent",
     "Development Status :: 4 - Beta",
     "Natural Language :: English",
