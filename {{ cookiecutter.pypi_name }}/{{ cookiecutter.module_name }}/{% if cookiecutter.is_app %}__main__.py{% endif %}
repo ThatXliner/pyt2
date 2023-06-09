@@ -1,8 +1,8 @@
-"""The main CLI entry point."""
+"""The main CLI entry point"""
 
 
 def main() -> None:
-    """Runs the app."""
+    """Run the app"""
     ...
 
 
