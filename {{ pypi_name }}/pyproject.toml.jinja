@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "{{ cookiecutter.pypi_name }}"
-description = "{{ cookiecutter.project_description }}"
-authors = ["{{ cookiecutter.author }} <{{ cookiecutter.email }}>"]
+name = "{{ pypi_name }}"
+description = "{{ project_description }}"
+authors = ["{{ author }} <{{ email }}>"]
 version = "0.1.0"
 
 readme = "README.md"
@@ -15,16 +15,16 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Natural Language :: English",
     "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
-]{% if cookiecutter.add_docs %}
-documentation = "https://{{ cookiecutter.module_name.replace("_", "") }}.readthedocs.io/en/latest/index.html"{% endif %}
-homepage = "https://github.com/{{ cookiecutter.username }}/{{ cookiecutter.pypi_name }}"
+]{% if add_docs %}
+documentation = "https://{{ module_name.replace('_', '') }}.readthedocs.io/en/latest/index.html"{% endif %}
+homepage = "https://github.com/{{ username }}/{{ pypi_name }}"
 # keywords = ["awesome", "project"]  # Maximum of 5 keywords
 
 [tool.poetry.dependencies]
-python = "^3.8"{% if cookiecutter.is_app %}
+python = "^3.8"{% if is_app %}
 
 [tool.poetry.scripts]
-{{ cookiecutter.module_name }} = "{{ cookiecutter.module_name }}.__main__:main"
+{{ module_name }} = "{{ module_name }}.__main__:main"
 {% endif %}
 
 [tool.poetry.group.dev.dependencies]
@@ -36,18 +36,18 @@ pytest-clarity = "^1.0.1"
 pytest-cov = "^4.0.0"
 ruff = "^0.0.249"
 shed = "^0.10.9"
-{% if cookiecutter.add_docs %}
+{% if add_docs %}
 Sphinx = "^6.1.3"{% endif %}
 toml = "^0.10.2"
 
 [tool.poe.tasks]
 # Code linting
-mypy   = {cmd = "mypy {{ cookiecutter.module_name }} --strict", help = "Run MyPy on codebase"}
-ruff = {cmd = "ruff check {{ cookiecutter.module_name }}", help = "Run Ruff on codebase"}
-check_black = {cmd = "black {{ cookiecutter.module_name }} --check"}
-check_imports = {cmd = "ruff check {{ cookiecutter.module_name }} --select I"}
+mypy   = {cmd = "mypy {{ module_name }} --strict", help = "Run MyPy on codebase"}
+ruff = {cmd = "ruff check {{ module_name }}", help = "Run Ruff on codebase"}
+check_black = {cmd = "black {{ module_name }} --check"}
+check_imports = {cmd = "ruff check {{ module_name }} --select I"}
 style    = ["check_black", "check_imports"]
-codebase = ["ruff", "mypy"]{% if cookiecutter.add_docs %}
+codebase = ["ruff", "mypy"]{% if add_docs %}
     [tool.poe.tasks.docs]
     cmd = "sphinx-build docs build"
     help = "Build documentation"{% endif %}
@@ -57,7 +57,7 @@ codebase = ["ruff", "mypy"]{% if cookiecutter.add_docs %}
     help = "Format code"
 
     [tool.poe.tasks.fix-ruff]
-    cmd = "ruff {{ cookiecutter.module_name }} --fix"
+    cmd = "ruff {{ module_name }} --fix"
     help = "Ruff autofix"
 
     [tool.poe.tasks.lint]
@@ -65,11 +65,11 @@ codebase = ["ruff", "mypy"]{% if cookiecutter.add_docs %}
     help = "Lint codebase"
 
     [tool.poe.tasks.test]
-    cmd = "pytest -vvv --cov={{ cookiecutter.module_name }}"
+    cmd = "pytest -vvv --cov={{ module_name }}"
     help = "Simply run test suite"
 
     [tool.poe.tasks.ci]
-    cmd = "pytest -vvv --cov={{ cookiecutter.module_name }} --cov-report=xml"
+    cmd = "pytest -vvv --cov={{ module_name }} --cov-report=xml"
     help = "This workflow is for Github Actions"
 
 

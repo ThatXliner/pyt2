@@ -3,7 +3,7 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 1 * *"  # Run every month
+    - cron: "0 0 1 * *" # Run every month
 jobs:
   main:
     runs-on: ubuntu-latest
@@ -15,7 +15,7 @@ jobs:
         with:
           python-version: 3.9
       - name: Install dependencies
-        run: python3 -m pip install --upgrade pip cookiecutter poetry poetry-plugin-up
+        run: python3 -m pip install --upgrade pip copier poetry poetry-plugin-up
       - name: Update template
         run: make all
       - name: Check if we should commit
