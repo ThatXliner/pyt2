@@ -35,10 +35,12 @@ jobs:
           message: ":robot: :arrow_up: Updated deps and lockfile\n\nThis is an automated action"
       - name: Generate tag
         id: gen_tag_name
+        if: ${{ contains(steps.commit_check.outputs.should_commit, 'true') }}
         run: |
           git fetch --tags
-          NEW_TAG=$(git describe --abbrev=0 --tags | awk -F. -v OFS=. 'NF==1{print ++$NF}; NF>1{$NF=sprintf("%0*d", length($NF), ($NF+1)); print}')
+          NEW_TAG=$(git tag -l | sort -V | tail -n 1 | awk -F. -v OFS=. 'NF==1{print ++$NF}; NF>1{$NF=sprintf("%0*d", length($NF), ($NF+1)); print}')
           echo "NEW_TAG=$NEW_TAG" >> "$GITHUB_OUTPUT"
       - uses: rickstaa/action-create-tag@v1
+        if: ${{ contains(steps.commit_check.outputs.should_commit, 'true') }}
         with:
           tag: "${{ steps.gen_tag_name.outputs.NEW_TAG }}"
