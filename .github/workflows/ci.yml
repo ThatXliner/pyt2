@@ -13,9 +13,12 @@ jobs:
         with:
           python-version: 3.9
       - name: Install dependencies
-        run: python3 -m pip install --upgrade pip cookiecutter poetry poethepoet
+        run: python3 -m pip install --upgrade pip copier poetry poethepoet
+      - name: Create default options
+        run: echo '{"add_docs":true,"author":"Bryan Hu","email":"bryan.hu.2020@gmail.com","is_app":true,"module_name":"cool_example","project_description":"","project_name":"Cool Example","pypi_name":"cool-example","username":"ThatXliner"}' > env.yml
+
       - name: Build example template
-        run: cookiecutter . --no-input
+        run: copier copy . a -a env.yml --defaults
       - name: Build example
         run: |
           cd cool-example

@@ -1,3 +1,5 @@
+> **Note**: If you're looking for the old CookieCutter template, see [this branch]
+
 # Pyt2
 
 My [second attempt](https://github.com/ThatXliner/Pytemplate) at making a Python template.
@@ -29,8 +31,10 @@ I've seen [many other projects like this](https://github.com/search?q=python+coo
 
 # Usage
 
+Run this to create a new folder in the current directory that contains the scaffolded project:
+
 ```bash
-cookiecutter gh:ThatXliner/pyt2
+copier copy gh:ThatXliner/pyt2 .
 ```
 
 :sparkles: Magic
