@@ -20,11 +20,12 @@ jobs:
       - name: Build example template
         run: copier copy gh:ThatXliner/pyt2 . -a .copier-answers.yml --defaults --vcs-ref HEAD
       - name: Build example
+        working-directory: cool-example
         run: |
-          cd cool-example
           poetry install
           poetry build
       - name: Run example tasks
+        working-directory: cool-example
         run: |
           poe docs
           poe style
