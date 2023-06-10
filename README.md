@@ -39,7 +39,7 @@ Run this to create a new folder in the current directory that contains the scaff
 copier copy gh:ThatXliner/pyt2 .
 ```
 
-Or for the bleeding-edge version on the `master` branch
+Or for the bleeding-edge version on the `master` branch:
 
 ```bash
 copier copy gh:ThatXliner/pyt2 . --vcs-ref master
