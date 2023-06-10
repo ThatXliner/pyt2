@@ -33,7 +33,13 @@ I've seen [many other projects like this](https://github.com/search?q=python+coo
 
 # Usage
 
-Run this to create a new folder in the current directory that contains the scaffolded project:
+First, install [Copier](https://copier.readthedocs.io/en/stable/) (preferably using [pipx](https://pypa.github.io/pipx/)):
+
+```bash
+pipx install copier
+```
+
+Now you can run this command to create a new folder in the current directory that contains the scaffolded project:
 
 ```bash
 copier copy gh:ThatXliner/pyt2 .
