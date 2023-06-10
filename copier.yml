@@ -1,6 +1,6 @@
 _min_copier_version: "8.0.0"
-_jinja_extensions:
-  - "jinja2_slug.SlugExtension"
+# _jinja_extensions:
+#   - "jinja2_slug.SlugExtension"
 project_name:
   type: "str"
   help: "A human-readable, official name for the project"
@@ -8,7 +8,8 @@ project_name:
 pypi_name:
   type: "str"
   help: "Your package name on PyPi"
-  default: "{{ project_name|slug }}"
+  default: "{{ project_name|lower|replace(' ', '-') }}"
+  # default: "{{ project_name|slug }}"
 module_name:
   type: "str"
   help: "`import` this project in Python using this name"
@@ -38,14 +39,14 @@ email:
   type: "str"
   help: "Your email"
   placeholder: "bryan.hu.2020@gmail.com"
-init_venv:
-  type: "bool"
-  help: "Should we run `poetry install` for you?"
-  default: true
-git_init:
-  type: "bool"
-  help: "Should we run `git init` for you?"
-  default: true
-_tasks:
-  - "{% if init_venv %}poetry install{% endif %}"
-  - "{% if git_init %}git init{% endif %}"
+# init_venv:
+#   type: "bool"
+#   help: "Should we run `poetry install` for you?"
+#   default: true
+# git_init:
+#   type: "bool"
+#   help: "Should we run `git init` for you?"
+#   default: true
+# _tasks:
+#   - "{% if init_venv %}poetry install{% endif %}"
+#   - "{% if git_init %}git init{% endif %}"
