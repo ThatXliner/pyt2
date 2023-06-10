@@ -1,4 +1,4 @@
-> **Note**: If you're looking for the old CookieCutter template, see [this branch]
+> **Note**: If you're looking for the old CookieCutter template, see [this branch](https://github.com/ThatXliner/pyt2/tree/cookiecutter)
 
 # Pyt2
 
