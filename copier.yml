@@ -15,7 +15,7 @@ module_name:
   type: "str"
   help: "`import` this project in Python using this name"
   default: "{{ pypi_name|replace('-', '_') }}"
-  validator: "{% if not (module_name|regex_search('^[_a-zA-Z][_a-zA-Z0-9]+$'))}Your module name is invalid{% endif %}"
+  validator: "{% if not (module_name|regex_search('^[_a-zA-Z][_a-zA-Z0-9]+$')) %}Your module name is invalid{% endif %}"
 project_description:
   type: "str"
   help: "The description of the project as it appears on PyPi"

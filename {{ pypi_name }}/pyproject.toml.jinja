@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "{{ pypi_name }}"
 description = "{{ project_description }}"
-authors = ["{{ author }}{% if email|length != 0 } <{{ email }}>{% endif %}"]
+authors = ["{{ author }}{% if email|length != 0 %} <{{ email }}>{% endif %}"]
 version = "0.1.0"
 
 readme = "README.md"
