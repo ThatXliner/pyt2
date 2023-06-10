@@ -18,7 +18,7 @@ jobs:
         run: echo '{"add_docs":true,"author":"Bryan Hu","email":"bryan.hu.2020@gmail.com","is_app":true,"module_name":"cool_example","project_description":"","project_name":"Cool Example","pypi_name":"cool-example","username":"ThatXliner"}' > env.yml
 
       - name: Build example template
-        run: copier copy . a -a env.yml --defaults
+        run: copier copy gh:ThatXliner/pyt2 . -a env.yml --defaults
       - name: Build example
         run: |
           cd cool-example
