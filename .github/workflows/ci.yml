@@ -15,7 +15,7 @@ jobs:
       - name: Install dependencies
         run: python3 -m pip install --upgrade pip copier poetry poethepoet
       - name: Create default options
-        run: echo '{"add_docs":true,"author":"Bryan Hu","email":"bryan.hu.2020@gmail.com","is_app":true,"module_name":"cool_example","project_description":"","project_name":"Cool Example","pypi_name":"cool-example","username":"ThatXliner"}' > .copier-answers.yml
+        run: make setup-env
 
       - name: Build example template
         run: copier copy gh:ThatXliner/pyt2 . -a .copier-answers.yml --defaults --vcs-ref HEAD
