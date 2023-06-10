@@ -39,7 +39,21 @@ Run this to create a new folder in the current directory that contains the scaff
 copier copy gh:ThatXliner/pyt2 .
 ```
 
-:sparkles: Magic
+Or for the bleeding-edge version on the `master` branch
+
+```bash
+copier copy gh:ThatXliner/pyt2 . --vcs-ref master
+```
+
+## Updating a project
+
+If you have already made a project using this and this template gets a new release, you may update your project by running
+
+```bash
+copier update
+```
+
+in your project.
 
 # FAQ
 
