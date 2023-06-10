@@ -1,3 +1,5 @@
+> **Warning**: This branch contains the *unmaintained* [CookieCutter](https://github.com/cookiecutter/cookiecutter) version of the Pyt2 template. Please refer to the [main branch](https://github.com/ThatXliner/pyt2) for the most up-to-date template (which uses [Copier](https://github.com/copier-org/copier))
+
 # Pyt2
 
 My [second attempt](https://github.com/ThatXliner/Pytemplate) at making a Python template.
