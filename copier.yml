@@ -31,17 +31,17 @@ is_app:
 author:
   type: "str"
   help: "The author name as it shows on PyPi"
-  placeholder: "Bryan Hu"
+  placeholder: "John Doe"
   validator: "{% if author|length == 0 %}Author name may not be empty{% endif %}"
 username:
   type: "str"
   help: "Your username as it is on GitHub"
-  placeholder: "ThatXliner"
+  placeholder: "Octocat"
   validator: "{% if username|length == 0 %}Username may not be empty{% endif %}"
 email:
   type: "str"
   help: "Your email"
-  placeholder: "bryan.hu.2020@gmail.com"
+  placeholder: "hello@example.com"
 # init_venv:
 #   type: "bool"
 #   help: "Should we run `poetry install` for you?"
