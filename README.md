@@ -17,7 +17,8 @@ I've seen [many other projects like this](https://github.com/search?q=python+coo
   - :black_circle: [Black](https://github.com/psf/black)
   - :snake: [MyPy](https://github.com/python/mypy)
   - :zap: [Ruff](https://beta.ruff.rs/docs/) (which includes [`isort`](https://pycqa.github.io/isort/) and [Pylint](https://pylint.readthedocs.io/en/latest/) and [many, many others...](https://beta.ruff.rs/docs/rules/))
-  - :warning: [`.pre-commit-config.yaml`](https://pre-commit.com/)
+  - :warning: Uses [`.pre-commit-config.yaml`](https://pre-commit.com/)
+  - :mouse: Uses [`.editorconfig`](https://editorconfig.org/)
 - &#x1F9EA; [Hypothesis](https://hypothesis.works), [codecov](https://about.codecov.io/), and [Pytest](https://pytest.org) for testing
 - :octocat: Uses [GitHub Actions](https://github.com/features/actions) for CI
   - :white_check_mark: [Cached workflows](https://github.com/ThatXliner/pyt2/blob/9f7b3d982a023ec2bc475a26752f909a9a95a2ba/%7B%7B%20cookiecutter.pypi_name%20%7D%7D/.github/workflows/ci.yml#L24-L43)
