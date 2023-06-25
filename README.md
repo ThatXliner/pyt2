@@ -6,7 +6,7 @@ My [second attempt](https://github.com/ThatXliner/Pytemplate) at making a Python
 
 ## Why?
 
-I've seen [many other projects like this](https://github.com/search?q=python+cookiecutter) but I've never seen any of them follow the pattern I want.
+I've seen [many other projects like this](https://github.com/search?q=python+cookiecutter) but I've never seen any of them follow the pattern I want. I highly recommend you <kbd>[Fork This Project](https://github.com/ThatXliner/pyt2/fork)</kbd> for your own needs because many of the defaults (e.g. README structure) are quite opinionated.
 
 ## :sparkles: Features
 
