@@ -70,6 +70,6 @@ Why this is the name: **Py**thon **T**emplate **2**
 
 ## Why is the default templated license GPL?
 
-[Because it's usually better](https://thatxliner.github.io/blog/2020/11/12/why-i-use-gnu-gpl.html).
+[Because it's usually better](https://thatxliner.github.io/blog/posts/why-i-use-gnu-gpl-v3/).
 
 But you can fork this and modify the default license in the template anyways. _This template_, however, is released to the **Public Domain**.
