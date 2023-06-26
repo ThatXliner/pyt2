@@ -2,6 +2,8 @@
 
 # Pyt2
 
+![GitHub tag (latest SemVer release)](https://img.shields.io/github/v/tag/ThatXliner/pyt2?logo=Github&label=version)
+
 My [second attempt](https://github.com/ThatXliner/Pytemplate) at making a Python template.
 
 ## Why?
