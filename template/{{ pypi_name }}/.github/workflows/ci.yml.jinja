@@ -49,7 +49,7 @@ jobs:
       - name: Run test suite
         run: poe ci
       - name: Upload to CodeCov
-        uses: codecov/codecov-action@v2{% endraw %}{% if add_docs %}
+        uses: codecov/codecov-action@v2{% endraw %}{% if add_docs %}{% raw %}
   docs:
     runs-on: ubuntu-latest
     steps:
@@ -73,7 +73,7 @@ jobs:
           poetry install  # Second time to install the project
 
       - name: Build docs
-        run: poe docs{% endif %}{% raw %}
+        run: poe docs{% endraw %}{% endif %}{% raw %}
   build:
     runs-on: ubuntu-latest
     steps:
