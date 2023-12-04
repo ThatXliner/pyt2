@@ -1,4 +1,4 @@
-_min_copier_version: "8.0.0"
+_min_copier_version: "9.1.0"
 _subdirectory: template
 # _jinja_extensions:
 #   - "jinja2_slug.SlugExtension"
