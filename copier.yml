@@ -13,7 +13,7 @@ is_py_package:
   default: true
 pypi_name:
   type: "str"
-  help: "Your package name on PyPi/module name"
+  help: "Your package name on PyPi and/or module name"
   default: "{{ project_name|lower|replace(' ', '-') }}"
   # default: "{{ project_name|slug }}"
 module_name:
