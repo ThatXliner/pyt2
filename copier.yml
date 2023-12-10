@@ -7,9 +7,13 @@ project_name:
   help: "A human-readable, official name for the project"
   placeholder: "Cool Example"
   validator: "{% if project_name|length == 0 %}Project name may not be empty{% endif %}"
+is_py_package:
+  type: "bool"
+  help: "Is your project a Python package?"
+  default: true
 pypi_name:
   type: "str"
-  help: "Your package name on PyPi"
+  help: "Your package name on PyPi/module name"
   default: "{{ project_name|lower|replace(' ', '-') }}"
   # default: "{{ project_name|slug }}"
 module_name:
