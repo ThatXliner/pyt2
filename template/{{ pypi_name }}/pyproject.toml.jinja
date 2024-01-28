@@ -20,7 +20,7 @@ homepage = "https://github.com/{{ username }}/{{ pypi_name }}"
 # keywords = ["awesome", "project"]  # Maximum of 5 keywords
 
 [tool.poetry.dependencies]
-python = "^3.8"{% if is_app %}
+python = "^3.12"{% if is_app %}
 
 [tool.poetry.scripts]
 {{ module_name }} = "{{ module_name }}.__main__:main"
