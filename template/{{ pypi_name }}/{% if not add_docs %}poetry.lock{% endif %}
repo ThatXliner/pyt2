@@ -189,13 +189,13 @@ toml = ["tomli"]
 
 [[package]]
 name = "hypothesis"
-version = "6.115.6"
+version = "6.116.0"
 description = "A library for property-based testing"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "hypothesis-6.115.6-py3-none-any.whl", hash = "sha256:d7b7173934753b9624680b38a85749de4fce367c44acb36c08b62765cc0a7a19"},
-    {file = "hypothesis-6.115.6.tar.gz", hash = "sha256:d4db48eef183591085676783967e943bb89fef4d596f78c3e4116c61fcc63a6b"},
+    {file = "hypothesis-6.116.0-py3-none-any.whl", hash = "sha256:d30271214eae0d4758b72b408e9777405c7c7f687e14e8a42853adea887b2891"},
+    {file = "hypothesis-6.116.0.tar.gz", hash = "sha256:9c1ac9a2edb77aacae1950d8ded6b3f40dbf8483097c88336265c348d2132c71"},
 ]
 
 [package.dependencies]
@@ -608,13 +608,13 @@ files = [
 
 [[package]]
 name = "rich"
-version = "13.9.3"
+version = "13.9.4"
 description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
 optional = false
 python-versions = ">=3.8.0"
 files = [
-    {file = "rich-13.9.3-py3-none-any.whl", hash = "sha256:9836f5096eb2172c9e77df411c1b009bace4193d6a481d534fea75ebba758283"},
-    {file = "rich-13.9.3.tar.gz", hash = "sha256:bc1e01b899537598cf02579d2b9f4a415104d3fc439313a7a2c165d76557a08e"},
+    {file = "rich-13.9.4-py3-none-any.whl", hash = "sha256:6049d5e6ec054bf2779ab3358186963bac2ea89175919d699e378b99738c2a90"},
+    {file = "rich-13.9.4.tar.gz", hash = "sha256:439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"},
 ]
 
 [package.dependencies]
@@ -716,4 +716,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "842c75ab69abffe5086116278d69fb4a53f6a37257008da392c6e5092c027515"
+content-hash = "646224b84864b5ee67d573855b52456198b20d8b3ccfd038c284a9a43a9a8963"
