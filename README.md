@@ -25,7 +25,7 @@ I've seen [many other projects like this](https://github.com/search?q=python+coo
 - :octocat: Uses [GitHub Actions](https://github.com/features/actions) for CI
   - :white_check_mark: [Cached workflows](https://github.com/ThatXliner/pyt2/blob/9f7b3d982a023ec2bc475a26752f909a9a95a2ba/%7B%7B%20cookiecutter.pypi_name%20%7D%7D/.github/workflows/ci.yml#L24-L43)
   - :snake: Tests for **Python 3.8+** on **:penguin: Linux, :apple: Mac, and :checkered_flag: Windows**.
-  - :bookmark: [Automatically generate and upload distribution files on tagged releases](https://github.com/ThatXliner/pyt2/blob/master/%7B%7B%20cookiecutter.pypi_name%20%7D%7D/.github/workflows/release.yml)
+  - :bookmark: [Automatically generate and upload distribution files on tagged GitHub releases](https://github.com/ThatXliner/pyt2/blob/master/%7B%7B%20cookiecutter.pypi_name%20%7D%7D/.github/workflows/release.yml.jinja)
   - :cheese: Publish to PyPi with [Trusted Publishers](https://docs.pypi.org/trusted-publishers/)
   - (Optional) :smile_cat: Documentation via [Sphinx](https://www.sphinx-doc.org/en/master/)
 - :printer: Template usage features
