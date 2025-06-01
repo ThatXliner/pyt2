@@ -90,9 +90,9 @@ def test_can_con():...
 def test_con_ends_gracefully():...
 ```
 
-#### Ward
+<!--#### Ward
 
-If we're using [Ward](https://ward.readthedocs.io/en/latest/), [tags](https://ward.readthedocs.io/en/latest/guide/writing_tests.html#tagging-tests) aren't required but are highly recommended to add.
+If we're using [Ward](https://ward.readthedocs.io/en/latest/), [tags](https://ward.readthedocs.io/en/latest/guide/writing_tests.html#tagging-tests) aren't required but are highly recommended to add.-->
 
 <h3 id="cs">Code Style</h3>
 
